@@ -1,0 +1,15 @@
+==========================================================================
+INSTALLATION
+==========================================================================
+
+The ENCODE-nets viewer uses CytoscapeWeb to render networks. The viewer is
+self-contained. This viewer only requires that PHP to be installed. 
+Installation simply involves dropping the contents of this  directory into 
+a directory in your web root.
+
+To add network files, copy them in to the /data directory and reload the
+viewer. The viewer supports the following file formats:
+  - sif
+  - GraphML
+  - XGMML
+Upon refreshing the page, the updated list of files should appear.
