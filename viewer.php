@@ -1,7 +1,14 @@
 <?php
 
+/* Begin configuration */
 $base_url  = ".";
 $data_path = "./data";
+$nav = array(
+    'home'   => '../',
+    'viewer' => './viewer.php',
+);
+/* End configuration */
+
 $net_files = array();
 
 if (!is_dir($data_path))
@@ -16,13 +23,6 @@ while (($file = readdir($dh)) !== FALSE)
         array_push($net_files, $file);
 
 closedir($dh);
-
-$nav = array(
-    'home'   => '../',
-    'viewer' => './viewer.php',
-    'tyna'   => '../tyna/'
-);
-
 ?>
 
 <!DOCTYPE html>
@@ -75,12 +75,11 @@ $nav = array(
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="<? echo $nav['home']; ?>">ENCODE-Nets Supplementary Data</a>
+                    <a class="brand" href="<? echo $nav['home']; ?>">Network Viewer</a>
                     <div class="nav-collapse">
                         <ul class="nav">
                             <li><a href="<? echo $nav['home']; ?>">Home</a></li>
                             <li class="active"><a href="<? echo $nav['viewer']; ?>">Viewer</a></li>
-                            <li><a href="<? echo $nav['tyna']; ?>" target="tyna">tYNA</a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div>
