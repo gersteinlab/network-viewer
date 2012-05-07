@@ -114,8 +114,9 @@ closedir($dh);
                     <div class="well">
                         <h3>Info</h3>
                         <div id="cytoscapeweb-note">
-                            <p>Click a node or edge.</p>
+                            <p>Click a data file.</p>
                         </div>
+                        <div id="download-link"></div>
                     </div>
                 </div>
             </div>
@@ -171,6 +172,7 @@ closedir($dh);
                              infostr += "<dt>Interaction</dt><dd>" + target.data.interaction + "</dd>";
                              infostr += "<dt>Label</dt><dd>"       + target.data.label + "</dd>";
                          } else {
+                             infostr += "<dt>Label</dt><dd>"     + target.data.label + "</dd>";
                              infostr += "<dt>Type</dt><dd>"      + target.data.type + "</dd>";
                              infostr += "<dt>Degree</dt><dd>"    + target.data.Degree + "</dd>";
                              infostr += "<dt>Outdegree</dt><dd>" + target.data.Outdegree + "</dd>";
@@ -208,6 +210,7 @@ closedir($dh);
                     });
 
                     $(this).parent().addClass("active");
+                    $("#download-link").html('<hr><a href="<? echo $base_url; ?>/data/' + filename + '" class="btn btn-info">Download file &raquo;</a>');
                 });
 
             };
